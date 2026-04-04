@@ -76,3 +76,4 @@ class SeatManager:
                 return json.load(f)
         except FileNotFoundError:
             return []
+print("SeatManager initialized. State loaded from file.")

@@ -14,6 +14,7 @@ Check latest progress
 import random
 import datetime
 import json
+from timer import free_expired_seats
 
 class SeatManager:
     def __init__(self, num_seats=100, state_file='seat_state.json'):
@@ -40,16 +41,32 @@ class SeatManager:
 
     def check_in(self, qr_code):
         """Checks in a user to a seat based on the provided QR code."""
+
+        free_expired_seats(self.seats)
+        #go through all seats and free ones where 2 hours have passed
+        self.save_state()
+        #save that change to the JSON file
+
         for seat in self.seats:
+            #loop through every seat
             if seat['qr_code'] == qr_code:
+                #did we find the seat that matches the scanned QR?
                 if not seat['occupied']:
+                    #is that seat free?
                     seat['occupied'] = True
+                    #mark it as taken now
                     seat['check_in_time'] = datetime.datetime.now().isoformat()
+                    #save current time as string (for JSON)
                     self.save_state()
+                    #save the change to the JSON file
                     return True, f"Checked in to seat {seat['id']}."
+                    #tell the app it worked
                 else:
+                #seat is taken
                     return False, "Seat is already occupied."
+                    #tell the app it failed
         return False, "Invalid QR code."
+        #if no seat matched the QR code at all
 
     def check_out(self, qr_code):
         """Checks out a user from a seat based on the provided QR code."""

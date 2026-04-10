@@ -1,15 +1,16 @@
-From datetime import datetime
+From datetime import datetime, timedelta
 
 
-def is_seat_available (check_in_time):
-    now = datetime.now()
-    expiry = check_in_time + datetime.timedelta (hours=2)
-    if check_in_time == None:
-        return True
-    if now > expiry:
+def has_expired (check_in_time):
+
+"""calculates when the 2 hours end"""
+    expiry_time = check_in_time + timedelta(hours=2)
+
+"""gets the current time"""
+    current_time = datetime.now()
+
+"""check if current time has passed the expiry time"""
+    if current_time > expiry_time:
         return True
     else:
-        return False
-    
-# linked to Occupied data function in seat_manager.py you should return occupied as true or false 
-# and then save that change into the file.
+        return false

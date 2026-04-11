@@ -1,9 +1,9 @@
-From datetime import datetime, timedelta
+from datetime import datetime, timedelta
 
-
-def has_expired (check_in_time):
-"""Returns True if 2 hours have passed since check_in_time, False if not
-"""
+def has_expired(check_in_time):
+    """
+    Returns True if 2 hours have passed since check_in_time, False if not
+    """
     expiry_time = check_in_time + timedelta(hours=2)
     # calculates when the 2 hours end
 

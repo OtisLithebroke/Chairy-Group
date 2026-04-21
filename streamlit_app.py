@@ -11,7 +11,7 @@ import os
 import datetime
 
 # Make sure Python can find seat_manager and timer in the same folder
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "Among-US-Group"))
 from seat_manager import SeatManager
 
 # ── Page config ────────────────────────────────────────────────────────────────

@@ -32,4 +32,3 @@ def free_expired_seats(seats):
                 seat['occupied'] = False
                 seat ['check_in_time'] = None
 
-hallo

@@ -21,20 +21,20 @@ st.set_page_config(
     layout="wide",
 )
 
-# ── Custom CSS ──────────────────────────────────────────────────────────────────
+# ── Custom CSS (designing what the website looks like)──────────────────────────
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap');
 
-    html, body, [class*="css"] {
+    html, body, [class*="css"] { #makes sure that the design applies for the whole website and anything that gets added
         font-family: 'DM Sans', sans-serif;
         background-color: #0f0f0f;
         color: #f0f0f0;
     }
     .stApp { background-color: #0f0f0f; }
 
-    h1, h2, h3 {
-        font-family: 'Space Mono', monospace;
+    h1, h2, h3 { # formatting the headers (titles, section titles, subtitles)
+        font-family: 'Space Mono', monospace; # using Space Mono we imported, or any monospace font
         color: #f0f0f0;
     }
 
@@ -42,11 +42,11 @@ st.markdown("""
         background: #1a1a1a;
         border: 1px solid #2a2a2a;
         border-radius: 10px;
-        padding: 12px;
+        padding: 12px; #adds space inside the card
         text-align: center;
         font-family: 'Space Mono', monospace;
         font-size: 12px;
-        transition: all 0.2s;
+        transition: all 0.2s; #if status changes, this will make the transition go smoothly
     }
     .seat-free   { border-color: #00c896; color: #00c896; }
     .seat-taken  { border-color: #ff4b6e; color: #ff4b6e; }
@@ -61,8 +61,8 @@ st.markdown("""
     .stat-number {
         font-family: 'Space Mono', monospace;
         font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 1;
+        font-weight: 700; #making the numbers bold
+        line-height: 1; #vertical spacing of the numbers
     }
     .stat-label {
         font-size: 0.8rem;
@@ -76,7 +76,7 @@ st.markdown("""
     .error-msg   { color: #ff4b6e; font-weight: 600; }
     .info-msg    { color: #7eb8ff; font-weight: 600; }
 
-    div[data-testid="stButton"] > button {
+    div[data-testid="stButton"] > button { #targets streamlit button containers
         background: #1a1a1a;
         border: 1px solid #333;
         color: #f0f0f0;

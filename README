@@ -1,0 +1,17 @@
+Hello
+
+Im your friend
+
+Just kidding.
+
+For the project Chairi, this is the following tasks at hand: 
+
+-	Online data base – access through API 
+-	Need some way to record user data – login and password 
+-	Track occupancy plus timer (periodic check every 10 minutes to update it) 
+-	Firebase / Supabase (simpler – they manage your data, just have to give it to them) 
+-	SQL database 
+-	Machine learning where youre given data form the tables – now you can get insights such as when is the best time to arrive at the bib, which spaces are usually (least popular) --> can make this up 
+-	QR code must contain the seat, the time etc. 
+-	Recall data base if someone wants a seat thats already taken
+-	First Actionable step: Work on data base to get basic reservation setup done
